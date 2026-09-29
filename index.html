@@ -4,20 +4,583 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landhaus Liese</title>
+
+```
+<title>Landhaus Liese | Unser Haus im alten Landhausstil</title>
+
+<meta name="description" content="Landhaus Liese – unser Neubau im alten Landhausstil. Haus, Interior, Garten, Eigenleistung und die kleinen Geschichten rund ums Bauen.">
+
+<style>
+    :root {
+        --green: #5d6b52;
+        --dark-green: #3f4c39;
+        --cream: #f7f3eb;
+        --beige: #e9e1d3;
+        --text: #3f4039;
+        --white: #fffdf9;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Georgia, "Times New Roman", serif;
+        color: var(--text);
+        background: var(--white);
+        line-height: 1.7;
+    }
+
+    /* NAVIGATION */
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: rgba(255, 253, 249, 0.96);
+        border-bottom: 1px solid #e5dfd3;
+    }
+
+    .nav {
+        max-width: 1150px;
+        margin: auto;
+        padding: 18px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        text-decoration: none;
+        color: var(--dark-green);
+        font-size: 1.55rem;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--text);
+        margin-left: 25px;
+        font-size: 0.95rem;
+    }
+
+    nav a:hover {
+        color: var(--green);
+    }
+
+    /* HERO */
+
+    .hero {
+        min-height: 75vh;
+        background:
+            linear-gradient(rgba(58, 66, 51, 0.28), rgba(58, 66, 51, 0.28)),
+            url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85")
+            center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 80px 25px;
+    }
+
+    .hero-content {
+        max-width: 800px;
+        color: white;
+    }
+
+    .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 8vw, 6rem);
+        line-height: 1;
+        font-weight: normal;
+        margin-bottom: 25px;
+        text-shadow: 0 2px 15px rgba(0,0,0,0.25);
+    }
+
+    .hero p {
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .button {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 13px 28px;
+        border: 1px solid white;
+        color: white;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: 0.25s;
+    }
+
+    .button:hover {
+        background: white;
+        color: var(--dark-green);
+    }
+
+    /* INTRO */
+
+    section {
+        padding: 90px 25px;
+    }
+
+    .container {
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    .intro {
+        background: var(--cream);
+        text-align: center;
+    }
+
+    .intro h2,
+    .section-title h2 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: normal;
+        color: var(--dark-green);
+        margin-bottom: 20px;
+    }
+
+    .intro p {
+        max-width: 720px;
+        margin: auto;
+        font-size: 1.08rem;
+    }
+
+    /* THEMEN */
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section-title p {
+        max-width: 650px;
+        margin: auto;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .card {
+        background: var(--cream);
+        padding: 42px 30px;
+        text-align: center;
+        border: 1px solid #e7e0d4;
+        transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(60, 55, 45, 0.08);
+    }
+
+    .card-icon {
+        font-size: 2rem;
+        margin-bottom: 18px;
+    }
+
+    .card h3 {
+        color: var(--dark-green);
+        font-size: 1.45rem;
+        font-weight: normal;
+        margin-bottom: 12px;
+    }
+
+    .card p {
+        font-family: Arial, sans-serif;
+        font-size: 0.93rem;
+        line-height: 1.7;
+    }
+
+    /* STORY */
+
+    .story {
+        background: var(--beige);
+    }
+
+    .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .story-image {
+        min-height: 430px;
+        background:
+            url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85")
+            center/cover;
+    }
+
+    .story-text h2 {
+        font-size: 2.7rem;
+        color: var(--dark-green);
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
+
+    .story-text p {
+        margin-bottom: 18px;
+    }
+
+    /* INSTAGRAM */
+
+    .instagram {
+        text-align: center;
+        background: var(--cream);
+    }
+
+    .instagram-box {
+        max-width: 700px;
+        margin: auto;
+    }
+
+    .instagram h2 {
+        font-size: 2.7rem;
+        color: var(--dark-green);
+        font-weight: normal;
+        margin-bottom: 15px;
+    }
+
+    .instagram a {
+        color: var(--dark-green);
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* FOOTER */
+
+    footer {
+        background: var(--dark-green);
+        color: #eeeae0;
+        text-align: center;
+        padding: 35px 20px;
+        font-family: Arial, sans-serif;
+        font-size: 0.85rem;
+    }
+
+    footer a {
+        color: #eeeae0;
+        text-decoration: none;
+        margin: 0 8px;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+        .nav {
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        nav a {
+            margin: 0 7px;
+            font-size: 0.85rem;
+        }
+
+        .hero {
+            min-height: 70vh;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        .story-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .story-image {
+            min-height: 300px;
+        }
+
+        section {
+            padding: 65px 20px;
+        }
+    }
+</style>
+```
+
 </head>
+
 <body>
 
+<header>
+    <div class="nav">
+        <a href="#" class="logo">Landhaus Liese</a>
+
 ```
-<h1>Landhaus Liese</h1>
+    <nav>
+        <a href="#haus">Haus</a>
+        <a href="#garten">Garten</a>
+        <a href="#interior">Interior</a>
+        <a href="#geschichte">Über uns</a>
+    </nav>
+</div>
+```
 
-<p>Willkommen bei Landhaus Liese.</p>
+</header>
 
-<p>
-    Hier entsteht meine kleine Webseite rund um unser Haus,
-    den Landhausstil, Interior und die Gestaltung unseres Gartens.
+<main>
+
+```
+<!-- HERO -->
+
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="eyebrow">Unser Zuhause · Unser Projekt · Unser Landhaus</div>
+
+        <h1>Landhaus Liese</h1>
+
+        <p>
+            Ein Neubau im alten Landhausstil –
+            mit viel Liebe, ein bisschen Eigenleistung
+            und noch ganz viel zu tun.
+        </p>
+
+        <a href="#geschichte" class="button">
+            Willkommen bei uns
+        </a>
+
+    </div>
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+    <div class="container">
+
+        <h2>Schön, dass du hier bist.</h2>
+
+        <p>
+            Unser Haus ist gebaut – aber unser Landhaus ist noch lange nicht fertig.
+            Während drinnen nach und nach unser Zuhause entsteht,
+            wartet draußen noch ein ziemlich großes Gartenabenteuer auf uns.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- THEMEN -->
+
+<section id="haus">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Was dich hier erwartet</h2>
+
+            <p>
+                Zwischen Landhausromantik, Baustellenchaos und der Frage,
+                wie man möglichst viel selbst machen kann.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="card-icon">🏡</div>
+
+                <h3>Unser Haus</h3>
+
+                <p>
+                    Unser Neubau im alten Landhausstil –
+                    vom Klinker bis zu den kleinen Details,
+                    die unser Zuhause besonders machen.
+                </p>
+
+            </div>
+
+
+            <div class="card" id="interior">
+
+                <div class="card-icon">🪴</div>
+
+                <h3>Interior</h3>
+
+                <p>
+                    Warme Farben, natürliche Materialien,
+                    Landhaus-Charme und die Suche nach
+                    den richtigen schönen Dingen.
+                </p>
+
+            </div>
+
+
+            <div class="card" id="garten">
+
+                <div class="card-icon">🌿</div>
+
+                <h3>Unser Garten</h3>
+
+                <p>
+                    Der große nächste Schritt:
+                    ein naturnaher Landhausgarten,
+                    Beete, Rosen und ganz viel Grün.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">🛠️</div>
+
+                <h3>Selber machen</h3>
+
+                <p>
+                    Wo wir selbst Hand anlegen,
+                    um Kosten zu sparen –
+                    und warum das nicht immer nach Plan läuft.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">💶</div>
+
+                <h3>Kosten & Sparen</h3>
+
+                <p>
+                    Was Dinge wirklich kosten,
+                    wo wir sparen und wo wir lieber
+                    etwas mehr investieren.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="card-icon">😅</div>
+
+                <h3>Echte Geschichten</h3>
+
+                <p>
+                    Denn zwischen Landhausidylle
+                    und Hausbau gibt es meistens
+                    auch jede Menge zu lachen.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GESCHICHTE -->
+
+<section class="story" id="geschichte">
+
+    <div class="container story-grid">
+
+        <div class="story-image"></div>
+
+        <div class="story-text">
+
+            <h2>Vom Neubau zum Landhaus</h2>
+
+            <p>
+                Unser Haus ist inzwischen gebaut.
+                Doch genau jetzt beginnt für uns der Teil,
+                auf den wir uns besonders freuen:
+                Aus einem neuen Haus soll ein Zuhause mit Geschichte werden.
+            </p>
+
+            <p>
+                Drinnen fehlen noch einige Dinge,
+                draußen wartet ein kompletter Garten darauf,
+                zum Leben erweckt zu werden.
+            </p>
+
+            <p>
+                Und genau dabei darfst du uns begleiten.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INSTAGRAM -->
+
+<section class="instagram">
+
+    <div class="instagram-box">
+
+        <h2>Landhaus Liese auf Instagram</h2>
+
+        <p>
+            Hausbau, Interior, Garten, Eigenleistung,
+            Kosten – und die kleinen Geschichten,
+            die man beim Bauen erlebt.
+        </p>
+
+        <p style="margin-top: 20px;">
+            <a href="https://www.instagram.com/landhausliese/" target="_blank">
+                @landhausliese
+            </a>
+        </p>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+
+```
+<p>© 2026 Landhaus Liese</p>
+
+<p style="margin-top: 10px;">
+    <a href="impressum.html">Impressum</a>
+    ·
+    <a href="datenschutz.html">Datenschutz</a>
 </p>
 ```
+
+</footer>
 
 </body>
 </html>
